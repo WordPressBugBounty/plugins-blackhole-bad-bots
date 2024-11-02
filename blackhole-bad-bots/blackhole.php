@@ -10,8 +10,8 @@
 	Donate link: https://monzillamedia.com/donate.html
 	Requires at least: 4.6
 	Tested up to: 6.7
-	Stable tag: 3.7.2
-	Version:    3.7.2
+	Stable tag: 3.7.3
+	Version:    3.7.3
 	Requires PHP: 5.6.20
 	Text Domain: blackhole-bad-bots
 	Domain Path: /languages
@@ -89,7 +89,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 				'email_address'   => get_option('admin_email'),
 				'email_from'      => get_option('admin_email'),
 				'message_display' => 'default',
-				'message_custom'  => '<h1>'. esc_html__('You have been banned from this site.', 'blackhole-bad-bots') .'</h1>',
+				'message_custom'  => '<h1>You have been banned from this site.</h1>', //
 				'bot_whitelist'   => self::default_uas(),
 				'ip_whitelist'    => self::default_ips(),
 			);
@@ -116,7 +116,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 		
 		private function constants() {
 			if (!defined('BBB_REQUIRE')) define('BBB_REQUIRE', '4.6');
-			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.7.2');
+			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.7.3');
 			if (!defined('BBB_NAME'))    define('BBB_NAME',    'Blackhole for Bad Bots');
 			if (!defined('BBB_AUTHOR'))  define('BBB_AUTHOR',  'Jeff Starr');
 			if (!defined('BBB_HOME'))    define('BBB_HOME',    'https://perishablepress.com/blackhole-bad-bots/');
