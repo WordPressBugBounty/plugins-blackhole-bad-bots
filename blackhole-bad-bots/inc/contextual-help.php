@@ -95,9 +95,9 @@ function blackhole_settings_contextual_help() {
 		array(
 			
 			'id' => 'blackhole-intro',
-			'title' => esc_attr__('Introduction', 'blackhole-bad-bots'),
+			'title' => esc_attr__('Welcome', 'blackhole-bad-bots'),
 			'content' => 
-				'<p><strong>'. esc_html__('Introduction', 'blackhole-bad-bots') .'</strong></p>'.
+				'<p><strong>'. esc_html__('Welcome', 'blackhole-bad-bots') .'</strong></p>'.
 				
 				'<p>'. 
 					esc_html__('Blackhole for Bad Bots is a WordPress security plugin that detects and traps bad bots in a', 'blackhole-bad-bots') . 

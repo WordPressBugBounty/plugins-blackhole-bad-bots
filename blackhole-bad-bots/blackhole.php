@@ -9,9 +9,9 @@
 	Author URI: https://plugin-planet.com/
 	Donate link: https://monzillamedia.com/donate.html
 	Requires at least: 4.7
-	Tested up to: 6.8
-	Stable tag: 3.7.4
-	Version:    3.7.4
+	Tested up to: 6.9
+	Stable tag: 3.7.5
+	Version:    3.7.5
 	Requires PHP: 5.6.20
 	Text Domain: blackhole-bad-bots
 	Domain Path: /languages
@@ -54,6 +54,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 				
 				add_action('admin_init',          array(self::$instance, 'check_blackhole'));
 				add_action('admin_init',          array(self::$instance, 'check_version'));
+				add_action('init',                array(self::$instance, 'load_i18n'));
 				add_filter('plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
 				add_filter('plugin_row_meta',     array(self::$instance, 'plugin_links'), 10, 2);
 				add_filter('admin_footer_text',   array(self::$instance, 'footer_text'),  10, 1);
@@ -115,7 +116,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 		
 		private function constants() {
 			if (!defined('BBB_REQUIRE')) define('BBB_REQUIRE', '4.7');
-			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.7.4');
+			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.7.5');
 			if (!defined('BBB_NAME'))    define('BBB_NAME',    'Blackhole for Bad Bots');
 			if (!defined('BBB_AUTHOR'))  define('BBB_AUTHOR',  'Jeff Starr');
 			if (!defined('BBB_HOME'))    define('BBB_HOME',    'https://perishablepress.com/blackhole-bad-bots/');
@@ -267,6 +268,10 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 			
 			return $styles;
 			
+		}
+		
+		public function load_i18n() {
+			load_plugin_textdomain('blackhole-bad-bots', false, dirname(BBB_FILE) .'/languages/');
 		}
 		
 		public function __clone() {

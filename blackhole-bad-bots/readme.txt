@@ -9,9 +9,9 @@ Contributors: specialk
 Author URI: https://plugin-planet.com/
 Donate link: https://monzillamedia.com/donate.html
 Requires at least: 4.7
-Tested up to: 6.8
-Stable tag: 3.7.4
-Version:    3.7.4
+Tested up to: 6.9
+Stable tag: 3.7.5
+Version:    3.7.5
 Requires PHP: 5.6.20
 Text Domain: blackhole-bad-bots
 Domain Path: /languages
@@ -74,8 +74,6 @@ Blackhole for Bad Bots protects your site against bad bots, spammers, scrapers, 
 
 _Not using WordPress? Check out the [standalone PHP version of Blackhole](https://perishablepress.com/blackhole-bad-bots/)!_
 
-_Check out [Blackhole Pro](https://plugin-planet.com/blackhole-pro/) and level up with advanced features!_
-
 
 
 **👾 Whitelist**
@@ -92,6 +90,33 @@ By default, this plugin does NOT block any of the major search engines (user age
 * Yandex
 
 These search engines (and all of their myriad variations) are whitelisted via user agent. So are a bunch of other "useful" bots. They always are allowed full access to your site, even if they disobey your robots.txt rules. This list can be customized in the plugin settings. For a complete list of whitelisted bots, visit the Help tab in the plugin settings (under "Whitelist Settings").
+
+_Check out [Blackhole Pro](https://plugin-planet.com/blackhole-pro/) and level up with advanced features!_
+
+
+**👾 Exclusive Pro Features**
+
+* Option to disable for logged-in users
+* Threshold control (number of allowed hits)
+* Custom email alerts
+* Custom messages for blocked bots
+* Custom redirect for blocked bots
+* Custom blackhole trigger links
+* Complete inline documentation
+* Block bots based on user agent
+* Block bots based on IP address
+* Whitelist/allow bots by user agent
+* Whitelist/allow bots by IP address
+* Redirect whitelisted bots
+* Set custom HTTP Status Code
+* Full-featured Bad Bot Log with paging, sorting, and field search
+* Manually add bad bots to the Bad Bot Log
+* Geo/IP location lookups for each bad bot
+* Logs number of blocked hits for each bot
+
+..plus everything the free version can do and more.
+
+_Learn more and [get Blackhole Pro &raquo;](https://plugin-planet.com/blackhole-pro/)_
 
 
 
@@ -122,7 +147,7 @@ I develop and maintain this free plugin with love for the WordPress community. T
 
 And/or purchase one of my premium WordPress plugins:
 
-* [BBQ Pro](https://plugin-planet.com/bbq-pro/) - Super fast WordPress firewall
+* [BBQ Pro](https://plugin-planet.com/bbq-pro/) - Blazing fast WordPress firewall
 * [Blackhole Pro](https://plugin-planet.com/blackhole-pro/) - Automatically block bad bots
 * [Banhammer Pro](https://plugin-planet.com/banhammer-pro/) - Monitor traffic and ban the bad guys
 * [GA Google Analytics Pro](https://plugin-planet.com/ga-google-analytics-pro/) - Connect WordPress to Google Analytics
@@ -331,7 +356,7 @@ _[More options available in the Pro version &raquo;](https://plugin-planet.com/b
 
 **Uninstalling**
 
-Blackhole for Bad Bots cleans up after itself. All plugin settings and the bad bot list will be removed from your database when the plugin is uninstalled via the Plugins screen. After uninstalling, don't forget to remove the blackhole rules from your `robots.txt` file. It's fine to leave them in place, it will not hurt anything, but they serve no purpose without the plugin installed.
+This plugin cleans up after itself. All plugin settings and collected data will be removed from the WordPress database when the plugin is uninstalled via the Plugins screen. After uninstalling, don't forget to remove the blackhole rules from your `robots.txt` file. It's fine to leave them in place, it will not hurt anything, but they serve no purpose without the plugin installed.
 
 More specifically, Blackhole adds only two things to the database: options and bot list. When the plugin is uninstalled/deleted via the Plugins screen, both of those items are removed automatically via the following lines in `uninstall.php`:
 
@@ -350,9 +375,9 @@ If you like Blackhole for Bad Bots, please take a moment to [give a 5-star ratin
 
 == Upgrade Notice ==
 
-To upgrade Blackhole for Bad Bots, remove the old version and replace with the new version. Or just click "Update" from the Plugins screen and let WordPress do it for you automatically.
+Visit the WordPress Plugins screen, locate the plugin, and click "Update" :)
 
-Note: uninstalling the plugin from the WP Plugins screen results in the removal of all settings and data from the WP database. 
+__Note:__ Deleting this plugin via the WordPress Plugins screen will remove all of its settings and data from the WordPress database.
 
 
 
@@ -514,16 +539,14 @@ Send any questions or feedback via my [contact form](https://plugin-planet.com/s
 If you like Blackhole for Bad Bots, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/blackhole-bad-bots/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
 
 
-**3.7.4 (2025/03/25)**
+**3.7.5 (2025/11/20)**
 
-* Removes `load_i18n()` function
-* Updates documentation about "no cache" policy
-* Adds uninstall option `blackhole-bad-bots-dismiss-notice`
-* Bumps minimum required WP version
+* Restores `load_i18n()`
 * Updates Help tab information
-* Updates plugin documentation
+* Updates plugin settings page
+* Improves readme.txt documentation
 * Generates new language template
-* Tests on WordPress 6.8
+* Tests on WordPress 6.9 (beta)
 
 
 Full changelog @ [https://plugin-planet.com/wp/changelog/blackhole-bad-bots.txt](https://plugin-planet.com/wp/changelog/blackhole-bad-bots.txt)
