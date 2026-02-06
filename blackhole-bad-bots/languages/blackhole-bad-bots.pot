@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-20 15:33+0000\n"
+"POT-Creation-Date: 2026-02-06 20:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: blackhole.php:257
+#: blackhole.php:255
 msgid " or higher, and has been deactivated! "
 msgstr ""
 
@@ -118,8 +118,7 @@ msgstr ""
 msgid "all IP addresses for Bingbot"
 msgstr ""
 
-#: inc/contextual-help.php:125 inc/contextual-help.php:385 
-#: inc/settings-reset.php:24
+#: inc/contextual-help.php:125 inc/contextual-help.php:385
 msgid "and"
 msgstr ""
 
@@ -129,7 +128,7 @@ msgid ""
 "following it. So there is virtually zero chance of false positives. "
 msgstr ""
 
-#: blackhole.php:244
+#: blackhole.php:242
 msgid "and try again."
 msgstr ""
 
@@ -143,12 +142,12 @@ msgid ""
 "regular expression. "
 msgstr ""
 
-#: inc/settings-reset.php:26
+#: inc/settings-reset.php:23
 msgid "Apply code"
 msgstr ""
 
-#: inc/settings-reset.php:26
-msgid "at checkout. Sale ends 1/11/2026."
+#: inc/settings-reset.php:23
+msgid "at checkout. Sale ends 3/28/2026."
 msgstr ""
 
 #: inc/contextual-help.php:12
@@ -159,7 +158,7 @@ msgstr ""
 msgid "available in pro version"
 msgstr ""
 
-#: inc/blackhole-helpers.php:223
+#: inc/blackhole-helpers.php:224
 msgid "Bad Bot Alert at "
 msgstr ""
 
@@ -186,11 +185,11 @@ msgstr ""
 msgid "Bad Bots Log"
 msgstr ""
 
-#: inc/settings-reset.php:51
+#: inc/settings-reset.php:48
 msgid "Bad bots reset successfully."
 msgstr ""
 
-#: inc/blackhole-helpers.php:231
+#: inc/blackhole-helpers.php:232
 msgid "Below you will find details about the bad bot that was denied access. "
 msgstr ""
 
@@ -265,11 +264,7 @@ msgstr ""
 msgid "book author"
 msgstr ""
 
-#: inc/settings-reset.php:25
-msgid "books"
-msgstr ""
-
-#: inc/settings-reset.php:63
+#: inc/settings-reset.php:60
 msgid "Bot deleted."
 msgstr ""
 
@@ -287,7 +282,7 @@ msgstr ""
 msgid "Bye bye bad bots.."
 msgstr ""
 
-#: blackhole.php:278 blackhole.php:282
+#: blackhole.php:276 blackhole.php:280
 msgid "Cheatin&rsquo; huh?"
 msgstr ""
 
@@ -315,7 +310,7 @@ msgstr ""
 msgid "Check your robots.txt rules"
 msgstr ""
 
-#: blackhole.php:209
+#: blackhole.php:207
 msgid "Click here to rate and review this plugin on WordPress.org"
 msgstr ""
 
@@ -402,7 +397,7 @@ msgstr ""
 msgid "Default message"
 msgstr ""
 
-#: inc/settings-reset.php:39
+#: inc/settings-reset.php:36
 msgid "Default options restored."
 msgstr ""
 
@@ -461,7 +456,7 @@ msgstr ""
 msgid "Disable Blackhole for logged-in users"
 msgstr ""
 
-#: inc/settings-reset.php:139
+#: inc/settings-reset.php:136
 msgid "Dismiss"
 msgstr ""
 
@@ -477,7 +472,7 @@ msgstr ""
 msgid "Do NOT follow this link or you will be banned from the site!"
 msgstr ""
 
-#: inc/blackhole-helpers.php:230
+#: inc/blackhole-helpers.php:231
 msgid "doing its job blocking bad bots. "
 msgstr ""
 
@@ -532,10 +527,6 @@ msgstr ""
 msgid "Failure to comply results in immediate banishment."
 msgstr ""
 
-#: inc/settings-reset.php:21
-msgid "Fall Sale!"
-msgstr ""
-
 #: inc/contextual-help.php:149
 msgid ""
 "First the plugin adds a hidden trigger link to the footer of your pages. "
@@ -588,7 +579,7 @@ msgstr ""
 msgid "Get Blackhole Pro &raquo;"
 msgstr ""
 
-#: blackhole.php:185
+#: blackhole.php:183
 msgid "Get Blackhole Pro!"
 msgstr ""
 
@@ -608,7 +599,7 @@ msgstr ""
 msgid "Go Pro to unlock this feature"
 msgstr ""
 
-#: blackhole.php:186
+#: blackhole.php:184
 msgid "Go&nbsp;Pro"
 msgstr ""
 
@@ -622,7 +613,7 @@ msgstr ""
 msgid "Google&rsquo;s robots.txt specifications"
 msgstr ""
 
-#: inc/blackhole-helpers.php:227
+#: inc/blackhole-helpers.php:228
 msgid "Hello! This email alert is sent from your WordPress site, "
 msgstr ""
 
@@ -655,11 +646,11 @@ msgstr ""
 msgid "Here you can whitelist bots based on their IP address. "
 msgstr ""
 
-#: blackhole.php:204
+#: blackhole.php:202
 msgid "Homepage"
 msgstr ""
 
-#: inc/blackhole-helpers.php:241
+#: inc/blackhole-helpers.php:242
 msgid "Host Name: "
 msgstr ""
 
@@ -780,7 +771,7 @@ msgstr ""
 msgid "IP address required for WHOIS lookup. "
 msgstr ""
 
-#: inc/blackhole-helpers.php:240
+#: inc/blackhole-helpers.php:241
 msgid "IP Address: "
 msgstr ""
 
@@ -825,7 +816,7 @@ msgid ""
 "Like Blackhole for Bad Bots? Show support and upgrade to the Pro version. "
 msgstr ""
 
-#: blackhole.php:226
+#: blackhole.php:224
 msgid "Like this plugin? Give it a"
 msgstr ""
 
@@ -857,15 +848,15 @@ msgstr ""
 msgid "More Information"
 msgstr ""
 
-#: inc/settings-reset.php:67
+#: inc/settings-reset.php:64
 msgid "No bots deleted."
 msgstr ""
 
-#: inc/settings-reset.php:55
+#: inc/settings-reset.php:52
 msgid "No changes made to bad bots."
 msgstr ""
 
-#: inc/settings-reset.php:43
+#: inc/settings-reset.php:40
 msgid "No changes made to options."
 msgstr ""
 
@@ -943,7 +934,7 @@ msgstr ""
 msgid "Please check WP General Settings."
 msgstr ""
 
-#: blackhole.php:244 blackhole.php:258
+#: blackhole.php:242 blackhole.php:256
 msgid "Please return to the"
 msgstr ""
 
@@ -951,7 +942,7 @@ msgstr ""
 msgid "plugin documentation"
 msgstr ""
 
-#: blackhole.php:203
+#: blackhole.php:201
 msgid "Plugin Homepage"
 msgstr ""
 
@@ -963,14 +954,10 @@ msgstr ""
 msgid "Pro version features include:"
 msgstr ""
 
-#: blackhole.php:243
+#: blackhole.php:241
 msgid ""
 "Pro version of Blackhole currently active. Free and Pro versions cannot be "
 "activated at the same time. "
-msgstr ""
-
-#: inc/settings-reset.php:23
-msgid "Pro WordPress plugins"
 msgstr ""
 
 #: inc/contextual-help.php:236
@@ -980,14 +967,15 @@ msgid ""
 msgstr ""
 
 #. Description of the plugin
-msgid "Protects your site against bad bots by trapping them in a blackhole."
+msgid ""
+"Protects your site against bad bots by trapping them in a virtual black hole."
 msgstr ""
 
 #: inc/settings-register.php:63
 msgid "Rate Plugin"
 msgstr ""
 
-#: blackhole.php:210
+#: blackhole.php:208
 msgid "Rate this plugin&nbsp;&raquo;"
 msgstr ""
 
@@ -1011,11 +999,11 @@ msgstr ""
 msgid "Report an issue in the Support Forum"
 msgstr ""
 
-#: inc/blackhole-helpers.php:239
+#: inc/blackhole-helpers.php:240
 msgid "Request URI: "
 msgstr ""
 
-#: blackhole.php:257
+#: blackhole.php:255
 msgid "requires WordPress "
 msgstr ""
 
@@ -1078,7 +1066,7 @@ msgstr ""
 msgid "Set the Controls.."
 msgstr ""
 
-#: blackhole.php:176 inc/settings-display.php:13 inc/settings-display.php:13
+#: blackhole.php:174 inc/settings-display.php:13 inc/settings-display.php:13
 msgid "Settings"
 msgstr ""
 
@@ -1132,10 +1120,6 @@ msgstr ""
 
 #: inc/contextual-help.php:15
 msgid "Support Blackhole Pro!"
-msgstr ""
-
-#: inc/settings-reset.php:22
-msgid "Take 25% OFF any of our"
 msgstr ""
 
 #: inc/settings-register.php:96
@@ -1201,7 +1185,7 @@ msgid ""
 "link. "
 msgstr ""
 
-#: inc/blackhole-helpers.php:228
+#: inc/blackhole-helpers.php:229
 msgid "There, you are using a plugin called Blackhole for Bad Bots. "
 msgstr ""
 
@@ -1213,7 +1197,7 @@ msgstr ""
 msgid "They should match up."
 msgstr ""
 
-#: inc/blackhole-helpers.php:229
+#: inc/blackhole-helpers.php:230
 msgid "This email alert tells you that the plugin is working great, "
 msgstr ""
 
@@ -1275,7 +1259,7 @@ msgstr ""
 msgid "To delete any bot(s), click its [x] button"
 msgstr ""
 
-#: inc/blackhole-helpers.php:232
+#: inc/blackhole-helpers.php:233
 msgid "To disable these email alerts at any time, visit the plugin settings. "
 msgstr ""
 
@@ -1301,7 +1285,7 @@ msgstr ""
 msgid "to unlock this feature"
 msgstr ""
 
-#: blackhole.php:258
+#: blackhole.php:256
 msgid "to upgrade WordPress and try again."
 msgstr ""
 
@@ -1321,6 +1305,10 @@ msgstr ""
 msgid "under &ldquo;Whitelist Settings&rdquo;"
 msgstr ""
 
+#: inc/settings-reset.php:22
+msgid "Unlock all features, Lifetime licenses available"
+msgstr ""
+
 #: inc/settings-register.php:437
 msgid "Upgrade to get more options, advanced bot log, add bots, and more."
 msgstr ""
@@ -1337,7 +1325,7 @@ msgstr ""
 msgid "Useful Resources"
 msgstr ""
 
-#: inc/blackhole-helpers.php:242
+#: inc/blackhole-helpers.php:243
 msgid "User Agent: "
 msgstr ""
 
@@ -1373,7 +1361,7 @@ msgstr ""
 msgid "virtual blackhole"
 msgstr ""
 
-#: inc/blackhole-helpers.php:233
+#: inc/blackhole-helpers.php:234
 msgid "Visit site: "
 msgstr ""
 
@@ -1409,7 +1397,7 @@ msgstr ""
 msgid "Warning message for bad bots"
 msgstr ""
 
-#: blackhole.php:243
+#: blackhole.php:241
 msgid "Warning:"
 msgstr ""
 
@@ -1449,7 +1437,7 @@ msgstr ""
 msgid "whitelisting bots"
 msgstr ""
 
-#: inc/blackhole-helpers.php:243
+#: inc/blackhole-helpers.php:244
 msgid "Whois Lookup: "
 msgstr ""
 
@@ -1469,7 +1457,7 @@ msgid ""
 "Visit the Bad Bots screen and remove them from the list."
 msgstr ""
 
-#: blackhole.php:244 blackhole.php:258
+#: blackhole.php:242 blackhole.php:256
 msgid "WP Admin Area"
 msgstr ""
 
@@ -1511,6 +1499,10 @@ msgid ""
 "following the hidden link. "
 msgstr ""
 
-#: blackhole.php:230
+#: blackhole.php:228
 msgid "★★★★★ rating&nbsp;&raquo;"
+msgstr ""
+
+#: inc/settings-reset.php:21
+msgid "👾 SAVE 30% on Blackhole Pro!"
 msgstr ""

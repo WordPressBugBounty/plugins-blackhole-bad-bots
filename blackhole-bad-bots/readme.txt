@@ -10,8 +10,8 @@ Author URI: https://plugin-planet.com/
 Donate link: https://monzillamedia.com/donate.html
 Requires at least: 4.7
 Tested up to: 6.9
-Stable tag: 3.7.5
-Version:    3.7.5
+Stable tag: 3.8
+Version:    3.8
 Requires PHP: 5.6.20
 Text Domain: blackhole-bad-bots
 Domain Path: /languages
@@ -72,7 +72,7 @@ __Important:__ Do NOT use this plugin on sites with caching. [Learn more&nbsp;&r
 
 Blackhole for Bad Bots protects your site against bad bots, spammers, scrapers, scanners, and other automated threats.
 
-_Not using WordPress? Check out the [standalone PHP version of Blackhole](https://perishablepress.com/blackhole-bad-bots/)!_
+> ✨ Not using WordPress? Check out the [standalone PHP version of Blackhole](https://perishablepress.com/blackhole-bad-bots/)!
 
 
 
@@ -91,7 +91,7 @@ By default, this plugin does NOT block any of the major search engines (user age
 
 These search engines (and all of their myriad variations) are whitelisted via user agent. So are a bunch of other "useful" bots. They always are allowed full access to your site, even if they disobey your robots.txt rules. This list can be customized in the plugin settings. For a complete list of whitelisted bots, visit the Help tab in the plugin settings (under "Whitelist Settings").
 
-_Check out [Blackhole Pro](https://plugin-planet.com/blackhole-pro/) and level up with advanced features!_
+> ✨ Check out [Blackhole Pro](https://plugin-planet.com/blackhole-pro/) and level up with advanced features!
 
 
 **👾 Exclusive Pro Features**
@@ -116,7 +116,7 @@ _Check out [Blackhole Pro](https://plugin-planet.com/blackhole-pro/) and level u
 
 ..plus everything the free version can do and more.
 
-_Learn more and [get Blackhole Pro &raquo;](https://plugin-planet.com/blackhole-pro/)_
+> ✨ Learn more and [get Blackhole Pro &raquo;](https://plugin-planet.com/blackhole-pro/)
 
 
 
@@ -182,7 +182,7 @@ __Note:__ For the robots.txt rules, there are two scenarios:
 
 For complete documentation, click the "Help" tab in the upper-right corner of the Blackhole settings screen. Help tab also available on the "Bad Bots" screen.
 
-[More info on installing WP plugins](https://wordpress.org/support/article/managing-plugins/#installing-plugins)
+[More info on installing WP plugins](https://wordpress.org/documentation/article/manage-plugins/#installing-plugins-1)
 
 [Verify Blackhole is working properly](https://plugin-planet.com/blackhole-pro-check-plugin-working/)
 
@@ -221,10 +221,10 @@ __Tip:__ you can find a link to your site's robots.txt file on the plugin settin
 Here are some collected resources for working with robots.txt. See also the next section, "Testing Robots.txt" for more tools.
 
 * [Learn more about robots.txt](https://www.robotstxt.org/)
-* [Validate your robots.txt file](https://lxrmarketplace.com/robots-txt-validator-tool.html)
+* [Validate your robots.txt file](https://technicalseo.com/tools/robots-txt/)
 * [Validate robots.txt in Google Webmaster Tools](https://www.google.com/webmasters/tools/robots-testing-tool)
-* [Google Robots.txt Specifications](https://developers.google.com/search/reference/robots_txt)
-* [How to Create a robots.txt file](https://developers.google.com/search/docs/advanced/robots/create-robots-txt)
+* [Google Robots.txt Specifications](https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec)
+* [How to Create a robots.txt file](https://developers.google.com/crawling/docs/robots-txt/create-robots-txt)
 
 Lots more great resources on the web to learn about and validate your robots.txt file. Read up, it's important for SEO.
 
@@ -235,7 +235,6 @@ Lots more great resources on the web to learn about and validate your robots.txt
 To test that your site's robots.txt rules are correct, you can use a free robots.txt checker. Google provides a [robots checker](https://support.google.com/webmasters/answer/6062598) inside of your Google account (i.e., must be logged in to Google). There are many other robots validators around online. Here are some examples:
 
 * [Robots.txt Validator](https://technicalseo.com/tools/robots-txt/)
-* [Robots txt File Checker](https://pagedart.com/tools/robots-txt-file-checker/)
 * [Robots.txt Checker](https://www.websiteplanet.com/webtools/robots-txt/)
 * [Robots.txt Test](https://seositecheckup.com/tools/robotstxt-test)
 
@@ -356,7 +355,7 @@ _[More options available in the Pro version &raquo;](https://plugin-planet.com/b
 
 **Uninstalling**
 
-This plugin cleans up after itself. All plugin settings and collected data will be removed from the WordPress database when the plugin is uninstalled via the Plugins screen. After uninstalling, don't forget to remove the blackhole rules from your `robots.txt` file. It's fine to leave them in place, it will not hurt anything, but they serve no purpose without the plugin installed.
+This plugin cleans up after itself. All plugin settings and collected data will be removed from the WordPress database when the plugin is deleted via the WP Plugins screen. After uninstalling, don't forget to remove the blackhole rules from your `robots.txt` file. It's fine to leave them in place, it will not hurt anything, but they serve no purpose without the plugin installed.
 
 More specifically, Blackhole adds only two things to the database: options and bot list. When the plugin is uninstalled/deleted via the Plugins screen, both of those items are removed automatically via the following lines in `uninstall.php`:
 
@@ -376,8 +375,6 @@ If you like Blackhole for Bad Bots, please take a moment to [give a 5-star ratin
 == Upgrade Notice ==
 
 Visit the WordPress Plugins screen, locate the plugin, and click "Update" :)
-
-__Note:__ Deleting this plugin via the WordPress Plugins screen will remove all of its settings and data from the WordPress database.
 
 
 
@@ -402,7 +399,7 @@ Blackhole uses its own "smart bot technology" that only blocks bots if they have
 
 **The trigger link is not appearing in the source code?**
 
-In order for the plugin to add the trigger link to your pages, your theme must include the template tag, `wp_footer()`. This is a recommended tag for all WordPress themes, so your theme should include it. If not, you can either add it yourself or contact the theme developer and ask for help. Here is [more information about wp_footer()](https://codex.wordpress.org/Function_Reference/wp_footer). Once the footer tag is included, the plugin will be able to add the trigger link to your pages.
+In order for the plugin to add the trigger link to your pages, your theme must include the template tag, `wp_footer()`. This is a recommended tag for all WordPress themes, so your theme should include it. If not, you can either add it yourself or contact the theme developer and ask for help. Here is [more information about wp_footer()](https://developer.wordpress.org/reference/functions/wp_footer/). Once the footer tag is included, the plugin will be able to add the trigger link to your pages.
 
 
 **Will this block good bots like Google and Bing?**
@@ -538,15 +535,17 @@ Send any questions or feedback via my [contact form](https://plugin-planet.com/s
 
 If you like Blackhole for Bad Bots, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/blackhole-bad-bots/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
 
+> 👾 [Get Blackhole Pro](https://plugin-planet.com/blackhole-pro/) to unlock powerful features like threshold, bot blacklist, custom triggers, and advanced Bad Bot Log.
 
-**3.7.5 (2025/11/20)**
 
-* Restores `load_i18n()`
-* Updates Help tab information
+**3.8 (2026/02/06)**
+
+* Adds check for `WP_CACHE` to abort function
 * Updates plugin settings page
 * Improves readme.txt documentation
 * Generates new language template
-* Tests on WordPress 6.9 (beta)
+* Tests on PHP 8.4 and 8.5
+* Tests on WordPress 6.9 + 7.0 (nightly)
 
 
 Full changelog @ [https://plugin-planet.com/wp/changelog/blackhole-bad-bots.txt](https://plugin-planet.com/wp/changelog/blackhole-bad-bots.txt)

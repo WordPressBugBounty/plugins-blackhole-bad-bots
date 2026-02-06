@@ -2,7 +2,7 @@
 /*
 	Plugin Name: Blackhole for Bad Bots
 	Plugin URI: https://perishablepress.com/blackhole-bad-bots/
-	Description: Protects your site against bad bots by trapping them in a blackhole.
+	Description: Protects your site against bad bots by trapping them in a virtual black hole.
 	Tags: bots, blackhole, honeypot, security, anti-spam
 	Author: Jeff Starr
 	Contributors: specialk
@@ -10,15 +10,13 @@
 	Donate link: https://monzillamedia.com/donate.html
 	Requires at least: 4.7
 	Tested up to: 6.9
-	Stable tag: 3.7.5
-	Version:    3.7.5
+	Stable tag: 3.8
+	Version:    3.8
 	Requires PHP: 5.6.20
 	Text Domain: blackhole-bad-bots
 	Domain Path: /languages
 	License: GPL v2 or later
-*/
-
-/*
+	
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
 	as published by the Free Software Foundation; either version 
@@ -32,7 +30,7 @@
 	You should have received a copy of the GNU General Public License
 	with this program. If not, visit: https://www.gnu.org/licenses/
 	
-	Copyright 2025 Monzilla Media. All rights reserved.
+	Copyright 2016-2026 Monzilla Media. All rights reserved.
 */
 
 if (!defined('ABSPATH')) die();
@@ -116,7 +114,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 		
 		private function constants() {
 			if (!defined('BBB_REQUIRE')) define('BBB_REQUIRE', '4.7');
-			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.7.5');
+			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.8');
 			if (!defined('BBB_NAME'))    define('BBB_NAME',    'Blackhole for Bad Bots');
 			if (!defined('BBB_AUTHOR'))  define('BBB_AUTHOR',  'Jeff Starr');
 			if (!defined('BBB_HOME'))    define('BBB_HOME',    'https://perishablepress.com/blackhole-bad-bots/');

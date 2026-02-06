@@ -114,7 +114,8 @@ function blackhole_abort($vars) {
 		(is_admin() && $ignore_backend) || 
 		(is_user_logged_in() && $ignore_loggedin) || 
 		(blackhole_is_login() && $ignore_login) || 
-		(blackhole_whitelist($vars))
+		(blackhole_whitelist($vars)) || 
+		(defined('WP_CACHE') && WP_CACHE)
 		
 	) return true;
 	
