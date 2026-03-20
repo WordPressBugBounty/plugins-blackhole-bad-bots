@@ -9,9 +9,9 @@ Contributors: specialk
 Author URI: https://plugin-planet.com/
 Donate link: https://monzillamedia.com/donate.html
 Requires at least: 4.7
-Tested up to: 6.9
-Stable tag: 3.8
-Version:    3.8
+Tested up to: 7.0
+Stable tag: 3.8.1
+Version:    3.8.1
 Requires PHP: 5.6.20
 Text Domain: blackhole-bad-bots
 Domain Path: /languages
@@ -538,14 +538,10 @@ If you like Blackhole for Bad Bots, please take a moment to [give a 5-star ratin
 > 👾 [Get Blackhole Pro](https://plugin-planet.com/blackhole-pro/) to unlock powerful features like threshold, bot blacklist, custom triggers, and advanced Bad Bot Log.
 
 
-**3.8 (2026/02/06)**
+**3.8.1 (2026/03/20)**
 
-* Adds check for `WP_CACHE` to abort function
-* Updates plugin settings page
-* Improves readme.txt documentation
-* Generates new language template
-* Tests on PHP 8.4 and 8.5
-* Tests on WordPress 6.9 + 7.0 (nightly)
+* Improves sanitization on settings page
+* Tests on WordPress 6.9 + 7.0
 
 
 Full changelog @ [https://plugin-planet.com/wp/changelog/blackhole-bad-bots.txt](https://plugin-planet.com/wp/changelog/blackhole-bad-bots.txt)

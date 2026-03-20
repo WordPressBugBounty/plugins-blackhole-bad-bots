@@ -72,17 +72,17 @@ function blackhole_callback_blocked_bots() {
 		$method       = isset($val['method'])       ? $val['method']       : '';
 		$date         = isset($val['date'])         ? $val['date']         : '';
 		
-		echo '<input name="bbb_badbots['. $key .'][ip_address]"   type="hidden" value="'. $ip_address .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][request_uri]"  type="hidden" value="'. $request_uri .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][remote_host]"  type="hidden" value="'. $remote_host .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][query_string]" type="hidden" value="'. $query_string .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][user_agent]"   type="hidden" value="'. $user_agent .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][referrer]"     type="hidden" value="'. $referrer .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][protocol]"     type="hidden" value="'. $protocol .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][method]"       type="hidden" value="'. $method .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][date]"         type="hidden" value="'. $date .'" /> ';
+		echo '<input name="bbb_badbots['. $key .'][ip_address]"   type="hidden" value="'. esc_attr($ip_address) .'" /> ';
+		echo '<input name="bbb_badbots['. $key .'][request_uri]"  type="hidden" value="'. esc_attr($request_uri) .'" /> ';
+		echo '<input name="bbb_badbots['. $key .'][remote_host]"  type="hidden" value="'. esc_attr($remote_host) .'" /> ';
+		echo '<input name="bbb_badbots['. $key .'][query_string]" type="hidden" value="'. esc_attr($query_string) .'" /> ';
+		echo '<input name="bbb_badbots['. $key .'][user_agent]"   type="hidden" value="'. esc_attr($user_agent) .'" /> ';
+		echo '<input name="bbb_badbots['. $key .'][referrer]"     type="hidden" value="'. esc_attr($referrer) .'" /> ';
+		echo '<input name="bbb_badbots['. $key .'][protocol]"     type="hidden" value="'. esc_attr($protocol) .'" /> ';
+		echo '<input name="bbb_badbots['. $key .'][method]"       type="hidden" value="'. esc_attr($method) .'" /> ';
+		echo '<input name="bbb_badbots['. $key .'][date]"         type="hidden" value="'. esc_attr($date) .'" /> ';
 		
-		$data = '<strong>'. $date .'</strong> - '. $ip_address .' - '. $protocol .' - <span class="bbb-user-agent">'. $user_agent . '</span>';
+		$data = '<strong>'. esc_html($date) .'</strong> - '. esc_html($ip_address) .' - '. esc_html($protocol) .' - <span class="bbb-user-agent">'. esc_html($user_agent) . '</span>';
 		
 		$data = apply_filters('blackhole_log_data', $data, $key, $val);
 		
