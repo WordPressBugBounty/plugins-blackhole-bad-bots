@@ -5,7 +5,7 @@
 .wp-admin .share-button { margin: 4px 0; }
 
 .wp-admin h1.bbb-title { 
-	margin: 0 0 8px 0; padding: 8px 0 8px 50px; text-shadow: 1px 1px 1px rgba(255,255,255,0.5); 
+	margin: 0 0 8px 0; padding: 8px 0 8px 45px; text-shadow: 1px 1px 1px rgba(255,255,255,0.5); 
 	background-image: url(../img/bbb-icon-88.png); background-color: transparent; background-repeat: no-repeat; background-position: left center; background-size: 44px 44px; 
 	}
 	.wp-admin h1.bbb-title span { color: #c7c7c7; font-size: 90%; }
@@ -59,25 +59,22 @@
 .wp-admin .pseudo-link { color: #0073aa; font-weight: bold; }
 .wp-admin .bbb-warning { color: #cc3333; font-weight: bold; }
 
-.wp-admin .bbb-pro { margin: 25px 0; }
-.wp-admin .bbb-pro a, 
-.wp-admin .bbb-pro a:hover, 
-.wp-admin .bbb-pro a img { display: block; max-width: 100%; width: 400px; height: auto; margin: 0; padding: 0; border: 0; text-decoration: none; }
+.wp-admin .bbb-pro-1 { margin: 25px 0 10px 0; }
+.wp-admin .bbb-pro-2 { margin: 10px 0 25px 0; }
+
+.wp-admin .bbb-pro-1 a, 
+.wp-admin .bbb-pro-1 a:hover, 
+.wp-admin .bbb-pro-1 a img { display: block; max-width: 100%; width: 400px; height: auto; margin: 0; padding: 0; border: 0; text-decoration: none; }
+
 .wp-admin .bbb-pro a       { opacity: 0.96; }
 .wp-admin .bbb-pro a:hover { opacity: 1; }
 
-.wp-admin .bbb-pro-screenshots-intro { margin-bottom: 25px; }
-.wp-admin .bbb-pro-screenshots { margin: 0; }
-.wp-admin .bbb-pro-screenshots a, 
-.wp-admin .bbb-pro-screenshots a:hover, 
-.wp-admin .bbb-pro-screenshots a img { display: inline-block; width: 110px; height: 110px; margin: 0 15px 10px 0; }
-.wp-admin .bbb-pro-screenshots a img { display: block; margin: 0; }
-.wp-admin .bbb-pro-screenshots a { padding: 4px; border: 1px solid #ccc; background-color: #ccc; cursor: pointer; }
-.wp-admin .bbb-pro-screenshots a:hover { padding: 4px; border: 1px solid #ccc; background-color: #f7f7f7; }
-
-@media (max-width: 500px) {
-	.wp-admin .bbq-pro-screenshots { display: none; }
-}
+.wp-admin .bbb-pro-3 a, 
+.wp-admin .bbb-pro-3 a:hover, 
+.wp-admin .bbb-pro-3 a img { display: inline-block; width: 110px; height: 110px; margin: 0 15px 10px 0; }
+.wp-admin .bbb-pro-3 a img { display: block; margin: 0; }
+.wp-admin .bbb-pro-3 a { padding: 4px; border: 1px solid #ccc; background-color: #ccc; cursor: pointer; }
+.wp-admin .bbb-pro-3 a:hover { padding: 4px; border: 1px solid #ccc; background-color: #f7f7f7; }
 
 .ui-dialog .ui-dialog-titlebar { font-size: 16px; }
 .ui-dialog .ui-dialog-buttonpane, .ui-dialog .ui-dialog-titlebar, .ui-dialog .ui-dialog-content { text-align: center; }

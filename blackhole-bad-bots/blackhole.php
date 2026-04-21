@@ -10,8 +10,8 @@
 	Donate link: https://monzillamedia.com/donate.html
 	Requires at least: 4.7
 	Tested up to: 7.0
-	Stable tag: 3.8.1
-	Version:    3.8.1
+	Stable tag: 3.8.2
+	Version:    3.8.2
 	Requires PHP: 5.6.20
 	Text Domain: blackhole-bad-bots
 	Domain Path: /languages
@@ -114,7 +114,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 		
 		private function constants() {
 			if (!defined('BBB_REQUIRE')) define('BBB_REQUIRE', '4.7');
-			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.8.1');
+			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.8.2');
 			if (!defined('BBB_NAME'))    define('BBB_NAME',    'Blackhole for Bad Bots');
 			if (!defined('BBB_AUTHOR'))  define('BBB_AUTHOR',  'Jeff Starr');
 			if (!defined('BBB_HOME'))    define('BBB_HOME',    'https://perishablepress.com/blackhole-bad-bots/');
@@ -182,7 +182,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 				$pro_href   = 'https://plugin-planet.com/blackhole-pro/';
 				$pro_title  = esc_attr__('Get Blackhole Pro!', 'blackhole-bad-bots');
 				$pro_text   = esc_html__('Go&nbsp;Pro', 'blackhole-bad-bots');
-				$pro_style  = 'font-weight:bold;';
+				$pro_style  = 'padding:2px 4px;font-weight:bold;border:1px solid #00CCCC;border-radius:2px;background-color:#fff;';
 				
 				$pro = '<a target="_blank" rel="noopener noreferrer" href="'. $pro_href .'" title="'. $pro_title .'" style="'. $pro_style .'">'. $pro_text .'</a>';
 				
@@ -204,7 +204,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 				$links[] = '<a target="_blank" rel="noopener noreferrer" href="'. $home_href .'" title="'. $home_title .'">'. $home_text .'</a>';
 				
 				$rate_href  = 'https://wordpress.org/support/plugin/'. BBB_SLUG .'/reviews/?rate=5#new-post';
-				$rate_title = esc_attr__('Click here to rate and review this plugin on WordPress.org', 'blackhole-bad-bots');
+				$rate_title = esc_attr__('Click here to rate and review this plugin at WordPress.org', 'blackhole-bad-bots');
 				$rate_text  = esc_html__('Rate this plugin&nbsp;&raquo;', 'blackhole-bad-bots');
 				
 				$links[] = '<a target="_blank" rel="noopener noreferrer" href="'. $rate_href .'" title="'. $rate_title .'">'. $rate_text .'</a>';
@@ -252,8 +252,8 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 				if (version_compare($wp_version, BBB_REQUIRE, '<')) {
 					if (is_plugin_active(BBB_FILE)) {
 						deactivate_plugins(BBB_FILE);
-						$msg  = '<strong>'. BBB_NAME .'</strong> '. esc_html__('requires WordPress ', 'blackhole-bad-bots') . BBB_REQUIRE . esc_html__(' or higher, and has been deactivated! ', 'blackhole-bad-bots');
-						$msg .= esc_html__('Please return to the', 'blackhole-bad-bots') .' <a href="'. admin_url() .'">'. esc_html__('WP Admin Area', 'blackhole-bad-bots') .'</a> '. esc_html__('to upgrade WordPress and try again.', 'blackhole-bad-bots');
+						$msg  = '<strong>'. BBB_NAME .'</strong> '. esc_html__('requires WordPress ', 'blackhole-bad-bots') . BBB_REQUIRE . esc_html__(' or higher, and has been deactivated. ', 'blackhole-bad-bots');
+						$msg .= esc_html__('Please return to the', 'blackhole-bad-bots') .' <a href="'. admin_url('plugins.php') .'">'. esc_html__('WordPress Admin Area', 'blackhole-bad-bots') .'</a> '. esc_html__('to upgrade WordPress and try again.', 'blackhole-bad-bots');
 						wp_die($msg);
 					}
 				}

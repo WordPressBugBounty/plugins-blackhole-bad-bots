@@ -120,7 +120,7 @@ function blackhole_settings_contextual_help() {
 				'<p><strong>'. esc_html__('About the Developer', 'blackhole-bad-bots') .'</strong></p>'.
 				
 				'<p>'. 
-					esc_html__('Blackhole is developed by', 'blackhole-bad-bots') .' <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/perishable">'. esc_html__('Jeff Starr', 'blackhole-bad-bots') .'</a>, '.
+					esc_html__('Blackhole is developed by', 'blackhole-bad-bots') .' <a target="_blank" rel="noopener noreferrer" href="https://profiles.wordpress.org/specialk/">'. esc_html__('Jeff Starr', 'blackhole-bad-bots') .'</a>, '.
 					esc_html__('15-year', 'blackhole-bad-bots') .' <a target="_blank" rel="noopener noreferrer" href="https://plugin-planet.com/">'. esc_html__('WordPress developer', 'blackhole-bad-bots') .'</a> '.
 					esc_html__('and', 'blackhole-bad-bots') .' <a target="_blank" rel="noopener noreferrer" href="https://books.perishablepress.com/">'. esc_html__('book author', 'blackhole-bad-bots') .'</a>.'.
 				'</p>'

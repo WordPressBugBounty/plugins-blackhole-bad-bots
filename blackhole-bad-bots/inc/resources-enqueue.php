@@ -6,7 +6,7 @@ function blackhole_enqueue_resources_admin() {
 	
 	$screen_id = blackhole_get_current_screen_id();
 	
-	if (($screen_id === 'toplevel_page_blackhole_settings') || ($screen_id === 'blackhole_page_blackhole_badbots')) {
+	if (($screen_id === 'toplevel_page_blackhole_settings') || ($screen_id === 'blackhole_page_blackhole_badbots') || ($screen_id === 'blackhole_page_blackhole_upgrade')) {
 		
 		// wp_enqueue_style ( $handle, $src, $deps, $ver, $media )
 		
@@ -28,7 +28,7 @@ function blackhole_print_js_vars_admin() {
 	
 	$screen_id = blackhole_get_current_screen_id();
 	
-	if (($screen_id === 'toplevel_page_blackhole_settings') || ($screen_id === 'blackhole_page_blackhole_badbots')) :
+	if (($screen_id === 'toplevel_page_blackhole_settings') || ($screen_id === 'blackhole_page_blackhole_badbots') || ($screen_id === 'blackhole_page_blackhole_upgrade')) :
 	
 	?>
 	

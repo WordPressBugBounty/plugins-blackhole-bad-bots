@@ -431,17 +431,23 @@ function blackhole_callback_support($args) {
 
 function blackhole_callback_pro($args) {
 	
-	$src   = esc_url(BBB_URL .'/img/blackhole-pro.jpg');
-	$href  = esc_url('https://plugin-planet.com/blackhole-pro/');
-	$alt   = esc_attr__('Blackhole Pro', 'blackhole-bad-bots');
-	$text  = esc_html__('Upgrade to get more options, advanced bot log, add bots, and more.', 'blackhole-bad-bots');
+	$href = esc_url('https://plugin-planet.com/blackhole-pro/');
+	$text = esc_html__('👾 Unlock all features!', 'blackhole-bad-bots');
+	$link = esc_html__('Upgrade to Pro &raquo;', 'blackhole-bad-bots');
 	
-	$output  = '<p>'. $text .' <a target="_blank" rel="noopener noreferrer" href="'. $href .'">'. esc_html__('Get Blackhole Pro &raquo;', 'blackhole-bad-bots') .'</a></p>';
-	$output .= '<p class="bbb-pro"><a target="_blank" rel="noopener noreferrer" href="'. $href .'"><img src="'. $src .'" width="400" height="104" alt="'. $alt .'"></a></p>';
+	blackhole_callback_pro_banner();
 	
-	$extra = isset($args['extra']) ? $args['extra'] : false;
+	echo '<p class="bbb-pro bbb-pro-2">'. $text .' <a target="_blank" rel="noopener noreferrer" href="'. $href .'">'. $link .'</a></p>';
 	
-	echo ($extra) ? $output . blackhole_callback_pro_extra() : $output;
+}
+
+function blackhole_callback_pro_banner() {
+	
+	$src  = esc_url(BBB_URL .'/img/blackhole-pro.jpg');
+	$href = esc_url('https://plugin-planet.com/blackhole-pro/');
+	$alt  = esc_attr__('Blackhole Pro', 'blackhole-bad-bots');
+	
+	echo '<p class="bbb-pro bbb-pro-1"><a target="_blank" rel="noopener noreferrer" href="'. $href .'"><img src="'. $src .'" width="400" height="104" alt="'. $alt .'"></a></p>';
 	
 }
 
@@ -461,13 +467,12 @@ function blackhole_callback_pro_extra() {
 	
 	$title = esc_attr__('Click to view full size screenshot (opens new tab)', 'blackhole-bad-bots');
 	
-	$output  = '<p class="bbb-pro-screenshots-intro">'. esc_html__('Check out Blackhole Pro settings and features:', 'blackhole-bad-bots') .'</p>';
-	$output .= '<p class="bbb-pro bbb-pro-screenshots">';
+	$output  = '<p class="bbb-pro bbb-pro-3">';
 	$output .= '<a target="_blank" rel="noopener noreferrer" href="'. $href_1 .'" title="'. $title .'"><img src="'. $src_1 .'" width="110" height="110" alt="'. $alt_1 .'" title="'. $alt_1 .'"></a>';
 	$output .= '<a target="_blank" rel="noopener noreferrer" href="'. $href_2 .'" title="'. $title .'"><img src="'. $src_2 .'" width="110" height="110" alt="'. $alt_2 .'" title="'. $alt_2 .'"></a>';
 	$output .= '<a target="_blank" rel="noopener noreferrer" href="'. $href_3 .'" title="'. $title .'"><img src="'. $src_3 .'" width="110" height="110" alt="'. $alt_3 .'" title="'. $alt_3 .'"></a>';
 	$output .= '</p>';
 	
-	return $output;
+	echo $output;
 	
 }

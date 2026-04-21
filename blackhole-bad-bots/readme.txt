@@ -10,8 +10,8 @@ Author URI: https://plugin-planet.com/
 Donate link: https://monzillamedia.com/donate.html
 Requires at least: 4.7
 Tested up to: 7.0
-Stable tag: 3.8.1
-Version:    3.8.1
+Stable tag: 3.8.2
+Version:    3.8.2
 Requires PHP: 5.6.20
 Text Domain: blackhole-bad-bots
 Domain Path: /languages
@@ -152,6 +152,7 @@ And/or purchase one of my premium WordPress plugins:
 * [Banhammer Pro](https://plugin-planet.com/banhammer-pro/) - Monitor traffic and ban the bad guys
 * [GA Google Analytics Pro](https://plugin-planet.com/ga-google-analytics-pro/) - Connect WordPress to Google Analytics
 * [Head Meta Pro](https://plugin-planet.com/head-meta-pro/) - Ultimate Meta Tags for WordPress
+* [REST Pro Tools](https://plugin-planet.com/rest-pro-tools/) - Awesome tools for managing the WP REST API
 * [Simple Ajax Chat Pro](https://plugin-planet.com/simple-ajax-chat-pro/) - Unlimited chat rooms
 * [USP Pro](https://plugin-planet.com/usp-pro/) - Unlimited front-end forms
 
@@ -538,10 +539,15 @@ If you like Blackhole for Bad Bots, please take a moment to [give a 5-star ratin
 > 👾 [Get Blackhole Pro](https://plugin-planet.com/blackhole-pro/) to unlock powerful features like threshold, bot blacklist, custom triggers, and advanced Bad Bot Log.
 
 
-**3.8.1 (2026/03/20)**
+**3.8.2 (2026/04/21)**
 
-* Improves sanitization on settings page
-* Tests on WordPress 6.9 + 7.0
+* Updates Help tab information
+* Improves accuracy of GeoIP lookups
+* Fixes bug with reset options
+* Updates plugin settings page
+* Adds settings page for pro version
+* Improves readme.txt documentation
+* Tests on WordPress 7.0
 
 
 Full changelog @ [https://plugin-planet.com/wp/changelog/blackhole-bad-bots.txt](https://plugin-planet.com/wp/changelog/blackhole-bad-bots.txt)

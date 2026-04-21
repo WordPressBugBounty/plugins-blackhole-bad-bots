@@ -18,9 +18,12 @@ function blackhole_tools_admin_notice() {
 			
 			<div class="notice notice-success notice-lh">
 				<p>
-					<strong><?php esc_html_e('👾 SAVE 30% on Blackhole Pro!', 'blackhole-bad-bots'); ?></strong> 
-					<a target="_blank" rel="noopener noreferrer" href="https://plugin-planet.com/blackhole-pro/"><?php esc_html_e('Unlock all features, Lifetime licenses available', 'blackhole-bad-bots'); ?></a>. 
-					<?php esc_html_e('Apply code', 'blackhole-bad-bots'); ?> <code>BLACKHOLE</code> <?php esc_html_e('at checkout. Sale ends 3/28/2026.', 'blackhole-bad-bots'); ?> 
+					<strong><?php esc_html_e('🌼 Spring Sale!', 'blackhole-bad-bots'); ?></strong> 
+					<?php esc_html_e('Take 30% OFF any of our', 'blackhole-bad-bots'); ?> 
+					<a target="_blank" rel="noopener noreferrer" href="https://plugin-planet.com/"><?php esc_html_e('Pro WordPress plugins', 'blackhole-bad-bots'); ?></a> 
+					<?php esc_html_e('and', 'blackhole-bad-bots'); ?> 
+					<a target="_blank" rel="noopener noreferrer" href="https://books.perishablepress.com/"><?php esc_html_e('books', 'blackhole-bad-bots'); ?></a>. 
+					<?php esc_html_e('Apply code', 'blackhole-bad-bots'); ?> <code>SPRING30</code> <?php esc_html_e('at checkout. Sale ends 6/28/2026.', 'blackhole-bad-bots'); ?> 
 					<?php echo blackhole_dismiss_notice_link($page); ?>
 				</p>
 			</div>
@@ -141,7 +144,7 @@ function blackhole_dismiss_notice_link($page) {
 
 function blackhole_check_date_expired() {
 	
-	$expires = apply_filters('blackhole_check_date_expired', '2026-03-28');
+	$expires = apply_filters('blackhole_check_date_expired', '2026-06-28');
 	
 	return (new DateTime() > new DateTime($expires)) ? true : false;
 	
@@ -157,11 +160,13 @@ function blackhole_reset_options() {
 		
 		$options_default = Blackhole_Bad_Bots::options();
 		
+		$dismiss_delete = delete_option('blackhole-bad-bots-dismiss-notice');
+		
 		$options_update = update_option('bbb_options', $options_default);
 		
 		$result = 'false';
 		
-		if ($options_update) $result = 'true';
+		if ($dismiss_delete || $options_update) $result = 'true';
 		
 		do_action('blackhole_reset_options', $options_update, $options_default);
 		
