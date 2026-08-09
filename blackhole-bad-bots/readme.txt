@@ -9,9 +9,9 @@ Contributors: specialk
 Author URI: https://plugin-planet.com/
 Donate link: https://monzillamedia.com/donate.html
 Requires at least: 4.7
-Tested up to: 7.0
-Stable tag: 3.8.2
-Version:    3.8.2
+Tested up to: 7.1
+Stable tag: 3.8.3
+Version:    3.8.3
 Requires PHP: 5.6.20
 Text Domain: blackhole-bad-bots
 Domain Path: /languages
@@ -538,6 +538,12 @@ If you like Blackhole for Bad Bots, please take a moment to [give a 5-star ratin
 
 > 👾 [Get Blackhole Pro](https://plugin-planet.com/blackhole-pro/) to unlock powerful features like threshold, bot blacklist, custom triggers, and advanced Bad Bot Log.
 
+
+**3.8.3 (2026/08/09)**
+
+* Improves nonce security (Thanks [Averon Averenkov](https://averonsec.com/))
+* Updates plugin settings page
+* Tests on WordPress 7.1
 
 **3.8.2 (2026/04/21)**
 

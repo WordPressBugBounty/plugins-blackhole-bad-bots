@@ -4,7 +4,8 @@ if (!defined('ABSPATH')) exit;
 
 function blackhole_trigger() {
 	
-	$nonce = wp_create_nonce('blackhole_trigger');
+	$ip = strtolower(blackhole_get_ip());
+	$nonce = wp_create_nonce('blackhole_trigger_'. $ip);
 	$href  = site_url('/?blackhole='. $nonce);
 	$title = esc_attr__('Do NOT follow this link or you will be banned from the site!', 'blackhole-bad-bots');
 	$text  = esc_html__(get_bloginfo('name'));
@@ -69,7 +70,9 @@ function blackhole_scanner() {
 	
 	if (blackhole_abort($vars)) return false;
 	
-	$verify = isset($_GET['blackhole']) ? wp_verify_nonce($_GET['blackhole'], 'blackhole_trigger') : false;
+	$ip = strtolower(blackhole_get_ip());
+	
+	$verify = isset($_GET['blackhole']) ? wp_verify_nonce($_GET['blackhole'], 'blackhole_trigger_'. $ip) : false;
 	
 	$verify = apply_filters('blackhole_verify_nonce', $verify);
 	
@@ -123,9 +126,9 @@ function blackhole_check_log($vars) {
 		
 		$haystack = isset($bot[$needle]) ? $bot[$needle] : '';
 		
-		$find = stripos($haystack, ${$needle});
+		$find = (strtolower($haystack) === strtolower(${$needle})) ? true : false;
 		
-		if ($find !== false) return true;
+		if ($find) return true;
 		
 	}
 	
