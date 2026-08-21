@@ -6,6 +6,18 @@ function blackhole_tools_admin_notice() {
 	
 	$screen_id = blackhole_get_current_screen_id();
 	
+	if (defined('WP_CACHE') && WP_CACHE) : ?>
+	
+	<div class="notice notice-warning">
+		<p>
+			<strong><?php esc_html_e('Warning:', 'blackhole-bad-bots'); ?></strong> 
+			<?php esc_html_e('Blackhole for Bad Bots is incompatible with caching.', 'blackhole-bad-bots'); ?> 
+			<a target="_blank" rel="noopener noreferrer" href="https://wordpress.org/support/topic/important-do-not-use-on-sites-with-caching/"><?php esc_html_e('Learn more at WordPress.org &raquo;', 'blackhole-bad-bots'); ?></a>
+		</p>
+	</div>
+	
+	<?php endif;
+	
 	if (($screen_id === 'toplevel_page_blackhole_settings') || ($screen_id === 'blackhole_page_blackhole_badbots')) {
 		
 		if (!blackhole_check_date_expired() && !blackhole_dismiss_notice_check()) {

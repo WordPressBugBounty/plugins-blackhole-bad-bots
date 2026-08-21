@@ -10,8 +10,8 @@
 	Donate link: https://monzillamedia.com/donate.html
 	Requires at least: 4.7
 	Tested up to: 7.1
-	Stable tag: 3.8.3
-	Version:    3.8.3
+	Stable tag: 3.8.4
+	Version:    3.8.4
 	Requires PHP: 5.6.20
 	Text Domain: blackhole-bad-bots
 	Domain Path: /languages
@@ -49,6 +49,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 				self::$instance->includes();
 				
 				register_activation_hook(__FILE__, 'blackhole_dismiss_notice_activate');
+				register_activation_hook(__FILE__, array(self::$instance, 'check_wp_cache'));
 				
 				add_action('admin_init',          array(self::$instance, 'check_blackhole'));
 				add_action('admin_init',          array(self::$instance, 'check_version'));
@@ -114,7 +115,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 		
 		private function constants() {
 			if (!defined('BBB_REQUIRE')) define('BBB_REQUIRE', '4.7');
-			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.8.3');
+			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.8.4');
 			if (!defined('BBB_NAME'))    define('BBB_NAME',    'Blackhole for Bad Bots');
 			if (!defined('BBB_AUTHOR'))  define('BBB_AUTHOR',  'Jeff Starr');
 			if (!defined('BBB_HOME'))    define('BBB_HOME',    'https://perishablepress.com/blackhole-bad-bots/');
@@ -158,10 +159,9 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 		
 		public static function default_uas() {
 			
-			$uas  = 'a6-indexer, adsbot-google, ahrefsbot, aolbuild, apis-google, baidu, bingbot, bingpreview, butterfly, cloudflare, chrome, duckduckgo, embedly, ';
-			$uas .= 'facebookexternalhit, facebot, google page speed, googlebot, ia_archiver, linkedinbot, mediapartners-google, msnbot, netcraftsurvey, ';
-			$uas .= 'outbrain, pinterest, quora, rogerbot, showyoubot, slackbot, slurp, sogou, teoma, tweetmemebot, twitterbot, ';
-			$uas .= 'uptimerobot, urlresolver, vkshare, w3c_validator, wordpress, wp rocket, yandex';
+			$uas  = 'adsbot-google, ahrefsbot, apis-google, baidu, bingbot, bingpreview, cloudflare, duckduckgo, embedly, facebookexternalhit, ';
+			$uas .= 'facebot, google page speed, googlebot, ia_archiver, linkedinbot, mediapartners-google, msnbot, pinterest, rogerbot, slackbot, slurp, ';
+			$uas .= 'teoma, twitterbot, uptimerobot, urlresolver, w3c_validator, wordpress, wp rocket, yandex';
 			
 			return apply_filters('blackhole_default_uas', $uas);
 			
@@ -233,31 +233,62 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 			
 		}
 		
+		public function check_wp_cache() {
+			
+			if (defined('WP_CACHE') && WP_CACHE) {
+				
+				$msg  = '<strong>'. esc_html__('Warning:', 'blackhole-bad-bots') .'</strong> '. esc_html__('Caching detected on site. Blackhole currently is incompatible with caching. ', 'blackhole-bad-bots');
+				$msg .= esc_html__('Please return to the', 'blackhole-bad-bots') .' <a href="'. admin_url('plugins.php') .'">'. esc_html__('WP Admin Area', 'blackhole-bad-bots') .'</a> '. esc_html__('and/or', 'blackhole-bad-bots');
+				$msg .= ' <a target="_blank" rel="noopener noreferrer" href="https://wordpress.org/support/topic/important-do-not-use-on-sites-with-caching/">'. esc_html__('learn more at WordPress.org', 'blackhole-bad-bots') .'</a>.';
+				
+				wp_die($msg);
+				
+			}
+			
+		}
+		
 		public function check_blackhole() {
+			
 			if (class_exists('Blackhole_Pro')) {
+				
 				if (is_plugin_active(BBB_FILE)) {
+					
 					deactivate_plugins(BBB_FILE);
 					
-					$msg  = '<strong>'. esc_html__('Warning:', 'blackhole-bad-bots') .'</strong> '. esc_html__('Pro version of Blackhole currently active. Free and Pro versions cannot be activated at the same time. ', 'blackhole-bad-bots');
+					$msg  = '<strong>'. esc_html__('Notice:', 'blackhole-bad-bots') .'</strong> '. esc_html__('Pro version of Blackhole currently active. Free and Pro versions cannot be activated at the same time. ', 'blackhole-bad-bots');
 					$msg .= esc_html__('Please return to the', 'blackhole-bad-bots') .' <a href="'. admin_url('plugins.php') .'">'. esc_html__('WP Admin Area', 'blackhole-bad-bots') .'</a> '. esc_html__('and try again.', 'blackhole-bad-bots');
 					
 					wp_die($msg);
+					
 				}
+				
 			}
+			
 		}
 		
 		public function check_version() {
+			
 			$wp_version = get_bloginfo('version');
+			
 			if (isset($_GET['activate']) && $_GET['activate'] == 'true') {
+				
 				if (version_compare($wp_version, BBB_REQUIRE, '<')) {
+					
 					if (is_plugin_active(BBB_FILE)) {
+						
 						deactivate_plugins(BBB_FILE);
+						
 						$msg  = '<strong>'. BBB_NAME .'</strong> '. esc_html__('requires WordPress ', 'blackhole-bad-bots') . BBB_REQUIRE . esc_html__(' or higher, and has been deactivated. ', 'blackhole-bad-bots');
 						$msg .= esc_html__('Please return to the', 'blackhole-bad-bots') .' <a href="'. admin_url('plugins.php') .'">'. esc_html__('WordPress Admin Area', 'blackhole-bad-bots') .'</a> '. esc_html__('to upgrade WordPress and try again.', 'blackhole-bad-bots');
+						
 						wp_die($msg);
+						
 					}
+					
 				}
+				
 			}
+			
 		}
 		
 		public function blackhole_allow_style($styles) {

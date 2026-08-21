@@ -385,6 +385,8 @@ function blackhole_settings_contextual_help() {
 					esc_html__('and', 'blackhole-bad-bots') .' <a target="_blank" rel="noopener noreferrer" href="https://searchengineland.com/microsoft-list-of-bingbot-ip-addresses-released-376039">'. esc_html__('all IP addresses for Bingbot', 'blackhole-bad-bots') .'</a>.'. 
 				'</p>'.
 				
+				'<p><strong>'. esc_html__('Important:', 'blackhole-bad-bots') .'</strong> '. esc_html__('User-agent pattern matching is substring-based. So for example, if you enter "chrome" in the whitelist setting, then *any* user agent that contains the string "chrome" will be matched. Caution is advised.', 'blackhole-bad-bots') .'</p>'.
+				
 				'<p><strong>'. esc_html__('Important:', 'blackhole-bad-bots') .'</strong> '. esc_html__('Commas are used to separate the user-agent strings. Do NOT include them anywhere else.', 'blackhole-bad-bots') .'</p>'.
 				
 				'<p>'. esc_html__('Learn more about', 'blackhole-bad-bots') .' <a target="_blank" rel="noopener noreferrer" href="https://plugin-planet.com/blackhole-pro-whitelist-bots/">'. esc_html__('whitelisting bots', 'blackhole-bad-bots') .'</a>.</p>'.
