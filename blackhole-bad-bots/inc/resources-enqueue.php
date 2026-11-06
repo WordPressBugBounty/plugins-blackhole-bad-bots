@@ -34,20 +34,20 @@ function blackhole_print_js_vars_admin() {
 	
 	<script type="text/javascript">
 		var 
-		alert_reset_badbots_title   = '<?php _e('Confirm Reset', 'blackhole-bad-bots'); ?>',
-		alert_reset_badbots_message = '<?php _e('Reset the list of bad bots?', 'blackhole-bad-bots'); ?>',
-		alert_reset_badbots_true    = '<?php _e('Yes, make it so.', 'blackhole-bad-bots'); ?>',
-		alert_reset_badbots_false   = '<?php _e('No, abort mission.', 'blackhole-bad-bots'); ?>',
+		alert_reset_badbots_title   = '<?php esc_html_e('Confirm Reset', 'blackhole-bad-bots'); ?>',
+		alert_reset_badbots_message = '<?php esc_html_e('Reset the list of bad bots?', 'blackhole-bad-bots'); ?>',
+		alert_reset_badbots_true    = '<?php esc_html_e('Yes, make it so.', 'blackhole-bad-bots'); ?>',
+		alert_reset_badbots_false   = '<?php esc_html_e('No, abort mission.', 'blackhole-bad-bots'); ?>',
 		
-		alert_reset_options_title   = '<?php _e('Confirm Reset', 'blackhole-bad-bots'); ?>',
-		alert_reset_options_message = '<?php _e('Restore default options?', 'blackhole-bad-bots'); ?>',
-		alert_reset_options_true    = '<?php _e('Yes, make it so.', 'blackhole-bad-bots'); ?>',
-		alert_reset_options_false   = '<?php _e('No, abort mission.', 'blackhole-bad-bots'); ?>',
+		alert_reset_options_title   = '<?php esc_html_e('Confirm Reset', 'blackhole-bad-bots'); ?>',
+		alert_reset_options_message = '<?php esc_html_e('Restore default options?', 'blackhole-bad-bots'); ?>',
+		alert_reset_options_true    = '<?php esc_html_e('Yes, make it so.', 'blackhole-bad-bots'); ?>',
+		alert_reset_options_false   = '<?php esc_html_e('No, abort mission.', 'blackhole-bad-bots'); ?>',
 		
-		alert_delete_bot_title      = '<?php _e('Confirm Delete', 'blackhole-bad-bots'); ?>',
-		alert_delete_bot_message    = '<?php _e('Delete this bot?', 'blackhole-bad-bots'); ?>',
-		alert_delete_bot_true       = '<?php _e('Yes, let him go.', 'blackhole-bad-bots'); ?>',
-		alert_delete_bot_false      = '<?php _e('No, stay on the leader.', 'blackhole-bad-bots'); ?>';
+		alert_delete_bot_title      = '<?php esc_html_e('Confirm Delete', 'blackhole-bad-bots'); ?>',
+		alert_delete_bot_message    = '<?php esc_html_e('Delete this bot?', 'blackhole-bad-bots'); ?>',
+		alert_delete_bot_true       = '<?php esc_html_e('Yes, let him go.', 'blackhole-bad-bots'); ?>',
+		alert_delete_bot_false      = '<?php esc_html_e('No, stay on the leader.', 'blackhole-bad-bots'); ?>';
 	</script>
 	
 	<?php 

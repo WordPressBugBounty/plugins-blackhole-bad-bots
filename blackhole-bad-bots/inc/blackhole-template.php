@@ -43,10 +43,10 @@ function blackhole_template($ip, $host, $date, $whois, $vars) {
 			</p>
 			<h2>Your Information</h2>
 			<ul>
-				<li><strong>IP Address:</strong> <?php echo $ip; ?></li>
-				<li><strong>Host Name:</strong> <?php echo $host; ?></li>
+				<li><strong>IP Address:</strong> <?php echo esc_html($ip); ?></li>
+				<li><strong>Host Name:</strong> <?php echo esc_html($host); ?></li>
 			</ul>
-			<pre>WHOIS Lookup for <?php echo $ip . "\n\n" . $date . "\n\n" . $whois; ?></pre>
+			<pre>WHOIS Lookup for <?php echo esc_html($ip) . "\n\n" . esc_html($date) . "\n\n" . $whois; ?></pre>
 			<h5><a target="_blank" rel="noopener noreferrer" href="https://perishablepress.com/blackhole-bad-bots/" title="Blackhole WordPress Plugin">Blackhole for Bad Bots</a></h5>
 		</div>
 	</body>

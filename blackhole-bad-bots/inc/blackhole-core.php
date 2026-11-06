@@ -7,9 +7,9 @@ function blackhole_trigger() {
 	$ip = strtolower(blackhole_get_ip());
 	$nonce = wp_create_nonce('blackhole_trigger_'. $ip);
 	$href  = site_url('/?blackhole='. $nonce);
-	$title = esc_attr__('Do NOT follow this link or you will be banned from the site!', 'blackhole-bad-bots');
-	$text  = esc_html__(get_bloginfo('name'));
-	$link  = '<a rel="nofollow" style="display:none" href="'. $href .'" title="'. $title .'">'. $text .'</a>' . "\n";
+	$title = __('Do NOT follow this link or you will be banned from the site!', 'blackhole-bad-bots');
+	$text  = get_bloginfo('name');
+	$link  = '<a rel="nofollow" style="display:none" href="'. esc_url($href) .'" title="'. esc_attr($title) .'">'. esc_html($text) .'</a>' . "\n";
 	
 	echo apply_filters('blackhole_trigger', $link, $text, $title, $href, $nonce);
 	

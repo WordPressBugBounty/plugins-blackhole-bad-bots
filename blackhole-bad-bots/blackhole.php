@@ -9,9 +9,9 @@
 	Author URI: https://plugin-planet.com/
 	Donate link: https://monzillamedia.com/donate.html
 	Requires at least: 4.7
-	Tested up to: 7.1
-	Stable tag: 3.8.4
-	Version:    3.8.4
+	Tested up to: 7.2
+	Stable tag: 3.9
+	Version:    3.9
 	Requires PHP: 5.6.20
 	Text Domain: blackhole-bad-bots
 	Domain Path: /languages
@@ -115,7 +115,7 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 		
 		private function constants() {
 			if (!defined('BBB_REQUIRE')) define('BBB_REQUIRE', '4.7');
-			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.8.4');
+			if (!defined('BBB_VERSION')) define('BBB_VERSION', '3.9');
 			if (!defined('BBB_NAME'))    define('BBB_NAME',    'Blackhole for Bad Bots');
 			if (!defined('BBB_AUTHOR'))  define('BBB_AUTHOR',  'Jeff Starr');
 			if (!defined('BBB_HOME'))    define('BBB_HOME',    'https://perishablepress.com/blackhole-bad-bots/');
@@ -304,11 +304,11 @@ if (!class_exists('Blackhole_Bad_Bots')) {
 		}
 		
 		public function __clone() {
-			_doing_it_wrong(__FUNCTION__, esc_html__('Cheatin&rsquo; huh?', 'blackhole-bad-bots'), BBB_VERSION);
+			_doing_it_wrong(__FUNCTION__, esc_html__('Cheatin&rsquo; huh?', 'blackhole-bad-bots'), esc_html(BBB_VERSION));
 		}
 		
 		public function __wakeup() {
-			_doing_it_wrong(__FUNCTION__, esc_html__('Cheatin&rsquo; huh?', 'blackhole-bad-bots'), BBB_VERSION);
+			_doing_it_wrong(__FUNCTION__, esc_html__('Cheatin&rsquo; huh?', 'blackhole-bad-bots'), esc_html(BBB_VERSION));
 		}
 		
 	}

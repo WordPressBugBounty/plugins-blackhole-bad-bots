@@ -6,19 +6,19 @@ function blackhole_tools_admin_notice() {
 	
 	$screen_id = blackhole_get_current_screen_id();
 	
-	if (defined('WP_CACHE') && WP_CACHE) : ?>
-	
-	<div class="notice notice-warning">
-		<p>
-			<strong><?php esc_html_e('Warning:', 'blackhole-bad-bots'); ?></strong> 
-			<?php esc_html_e('Blackhole for Bad Bots is incompatible with caching.', 'blackhole-bad-bots'); ?> 
-			<a target="_blank" rel="noopener noreferrer" href="https://wordpress.org/support/topic/important-do-not-use-on-sites-with-caching/"><?php esc_html_e('Learn more at WordPress.org &raquo;', 'blackhole-bad-bots'); ?></a>
-		</p>
-	</div>
-	
-	<?php endif;
-	
 	if (($screen_id === 'toplevel_page_blackhole_settings') || ($screen_id === 'blackhole_page_blackhole_badbots')) {
+		
+		if (defined('WP_CACHE') && WP_CACHE) : ?>
+			
+			<div class="notice notice-warning">
+				<p>
+					<strong><?php esc_html_e('Warning:', 'blackhole-bad-bots'); ?></strong> 
+					<?php esc_html_e('Blackhole for Bad Bots is incompatible with caching.', 'blackhole-bad-bots'); ?> 
+					<a target="_blank" rel="noopener noreferrer" href="https://wordpress.org/support/topic/important-do-not-use-on-sites-with-caching/"><?php esc_html_e('Learn more at WordPress.org &raquo;', 'blackhole-bad-bots'); ?></a>
+				</p>
+			</div>
+			
+		<?php endif;
 		
 		if (!blackhole_check_date_expired() && !blackhole_dismiss_notice_check()) {
 			
@@ -30,12 +30,12 @@ function blackhole_tools_admin_notice() {
 			
 			<div class="notice notice-success notice-lh">
 				<p>
-					<strong><?php esc_html_e('☀️ Summer Sale!', 'blackhole-bad-bots'); ?></strong> 
-					<?php esc_html_e('Take 35% OFF any of our', 'blackhole-bad-bots'); ?> 
+					<strong><?php esc_html_e('🍁 Fall Sale!', 'blackhole-bad-bots'); ?></strong> 
+					<?php esc_html_e('Take 25% OFF any of our', 'blackhole-bad-bots'); ?> 
 					<a target="_blank" rel="noopener noreferrer" href="https://plugin-planet.com/"><?php esc_html_e('Pro WordPress plugins', 'blackhole-bad-bots'); ?></a> 
 					<?php esc_html_e('and', 'blackhole-bad-bots'); ?> 
 					<a target="_blank" rel="noopener noreferrer" href="https://books.perishablepress.com/"><?php esc_html_e('books', 'blackhole-bad-bots'); ?></a>. 
-					<?php esc_html_e('Apply code', 'blackhole-bad-bots'); ?> <code>SUMMER</code> <?php esc_html_e('at checkout. Sale ends 9/20/2026.', 'blackhole-bad-bots'); ?> 
+					<?php esc_html_e('Apply code', 'blackhole-bad-bots'); ?> <code>FALL2026</code> <?php esc_html_e('at checkout. Sale ends 12/20/2026.', 'blackhole-bad-bots'); ?> 
 					<?php echo blackhole_dismiss_notice_link($page); ?>
 				</p>
 			</div>
@@ -134,7 +134,7 @@ function blackhole_dismiss_notice_save() {
 		
 		$location = admin_url('admin.php?page='. $page .'&dismiss-notice='. $result);
 		
-		wp_redirect($location);
+		wp_safe_redirect($location);
 		
 		exit;
 		
@@ -156,7 +156,7 @@ function blackhole_dismiss_notice_link($page) {
 
 function blackhole_check_date_expired() {
 	
-	$expires = apply_filters('blackhole_check_date_expired', '2026-09-20');
+	$expires = apply_filters('blackhole_check_date_expired', '2026-12-20');
 	
 	return (new DateTime() > new DateTime($expires)) ? true : false;
 	
@@ -183,7 +183,7 @@ function blackhole_reset_options() {
 		do_action('blackhole_reset_options', $options_update, $options_default);
 		
 		$location = admin_url('admin.php?page=blackhole_settings&reset-options='. $result);
-		wp_redirect($location);
+		wp_safe_redirect($location);
 		exit;
 		
 	}
@@ -213,7 +213,7 @@ function blackhole_reset_badbots() {
 		do_action('blackhole_reset_badbots', $badbots_update, $badbots_default);
 		
 		$location = admin_url('admin.php?page=blackhole_badbots&reset-badbots='. $result);
-		wp_redirect($location);
+		wp_safe_redirect($location);
 		exit;
 		
 	}
@@ -251,7 +251,7 @@ function blackhole_delete_bot() {
 		do_action('blackhole_delete_bot', $bot_id, $bot_ip, $badbots_update);
 		
 		$location = admin_url('admin.php?page=blackhole_badbots&delete-bot='. $result);
-		wp_redirect($location);
+		wp_safe_redirect($location);
 		exit;
 		
 	}

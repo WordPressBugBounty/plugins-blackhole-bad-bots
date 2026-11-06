@@ -19,7 +19,8 @@ function blackhole_whois($ip) {
 		if (!$sock = fsockopen($server, $port, $num, $error, 20)) {
 			
 			unset($sock);
-			$msg .= esc_html__('Timed-out connecting to ', 'blackhole-bad-bots') . $server . esc_html__(' (port '. strval($port) .'). ', 'blackhole-bad-bots') . "\n\n";
+			$port_number = '(port '. strval($port) .')';
+			$msg .= esc_html__('Timed-out connecting to ', 'blackhole-bad-bots') . $server . esc_html($port_number) . "\n\n";
 			
 		} else {
 			
@@ -51,7 +52,8 @@ function blackhole_whois($ip) {
 			if (!$sock = fsockopen($nextServer, $port, $num, $error, 10)) {
 				
 				unset($sock);
-				$msg .= esc_html__('Timed-out connecting to ', 'blackhole-bad-bots') . $nextServer . esc_html__(' (port '. strval($port) .'). ', 'blackhole-bad-bots') . "\n\n";
+				$port_number = '(port '. strval($port) .')';
+				$msg .= esc_html__('Timed-out connecting to ', 'blackhole-bad-bots') . $nextServer . esc_html($port_number) . "\n\n";
 				
 			} else {
 				

@@ -9,9 +9,9 @@ Contributors: specialk
 Author URI: https://plugin-planet.com/
 Donate link: https://monzillamedia.com/donate.html
 Requires at least: 4.7
-Tested up to: 7.1
-Stable tag: 3.8.4
-Version:    3.8.4
+Tested up to: 7.2
+Stable tag: 3.9
+Version:    3.9
 Requires PHP: 5.6.20
 Text Domain: blackhole-bad-bots
 Domain Path: /languages
@@ -284,7 +284,7 @@ By default, certain things are automatically whitelisted when the plugin is acti
 
 Blackhole for Bad Bots is rigorously tested to ensure that the top search engine bots are NEVER BLOCKED. Any bots reporting a User Agent that contains any of the following strings will always have access to your site, even if they disobey robots.txt.
 
-	a6-indexer, adsbot-google, ahrefsbot, aolbuild, apis-google, baidu, bingbot, bingpreview, butterfly, cloudflare, chrome, duckduckgo, embedly, facebookexternalhit, facebot, google page speed, googlebot, ia_archiver, linkedinbot, mediapartners-google, msnbot, netcraftsurvey, outbrain, pinterest, quora, rogerbot, showyoubot, slackbot, slurp, sogou, teoma, tweetmemebot, twitterbot, uptimerobot, urlresolver, vkshare, w3c_validator, wordpress, wp rocket, yandex
+	adsbot-google, ahrefsbot, apis-google, baidu, bingbot, bingpreview, cloudflare, duckduckgo, embedly, facebookexternalhit, facebot, google page speed, googlebot, ia_archiver, linkedinbot, mediapartners-google, msnbot, pinterest, rogerbot, slackbot, slurp, teoma, twitterbot, uptimerobot, urlresolver, w3c_validator, wordpress, wp rocket, yandex
 
 Of course, this list is completely customizable via the plugin settings. Each added string is matched against the full user agent, so be careful. Learn more about [user agents of the top search engines](https://perishablepress.com/list-all-user-agents-top-search-engines/).
 
@@ -539,30 +539,16 @@ If you like Blackhole for Bad Bots, please take a moment to [give a 5-star ratin
 > 👾 [Get Blackhole Pro](https://plugin-planet.com/blackhole-pro/) to unlock powerful features like threshold, bot blacklist, custom triggers, and advanced Bad Bot Log.
 
 
-**3.8.4 (2026/08/20)**
+**3.9 (2026/11/06)**
 
-Special thanks to [Averon Averenkov](https://averonsec.com/)) for helping to improve the security and usability of this plugin.
-
-* Removes `chrome` and other strings from default whitelist
-* Mitigates cache incompatibility with checks for `WP_CACHE`
-* Improves UA whitelist information in plugin Help tab
-* Tests on WordPress 7.1
-
-**3.8.3 (2026/08/09)**
-
-* Improves nonce security (Thanks [Averon Averenkov](https://averonsec.com/))
+* Checks plugin with Plugin Check
+* Improves security of core functions
+* Improves security of plugin settings
+* Improves security of internal redirects
+* Move admin notice to settings
 * Updates plugin settings page
-* Tests on WordPress 7.1
-
-**3.8.2 (2026/04/21)**
-
-* Updates Help tab information
-* Improves accuracy of GeoIP lookups
-* Fixes bug with reset options
-* Updates plugin settings page
-* Adds settings page for pro version
-* Improves readme.txt documentation
-* Tests on WordPress 7.0
+* Improves plugin documentation
+* Tests on WordPress 7.2
 
 
 Full changelog @ [https://plugin-planet.com/wp/changelog/blackhole-bad-bots.txt](https://plugin-planet.com/wp/changelog/blackhole-bad-bots.txt)

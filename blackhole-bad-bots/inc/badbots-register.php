@@ -46,9 +46,9 @@ function blackhole_settings_section_badbots() {
 function blackhole_callback_reset_badbots($args) {
 	
 	$nonce = wp_create_nonce('blackhole_reset_badbots');
-	$href = esc_url(add_query_arg(array('reset-badbots-verify' => $nonce), admin_url('admin.php?page=blackhole_badbots')));
+	$href = add_query_arg(array('reset-badbots-verify' => $nonce), admin_url('admin.php?page=blackhole_badbots'));
 	
-	echo '<a class="bbb-reset-badbots" href="'. $href .'">'. esc_html__('Reset Bad Bots Log', 'blackhole-bad-bots') .'</a>';
+	echo '<a class="bbb-reset-badbots" href="'. esc_url($href) .'">'. esc_html__('Reset Bad Bots Log', 'blackhole-bad-bots') .'</a>';
 	
 }
 
@@ -72,23 +72,23 @@ function blackhole_callback_blocked_bots() {
 		$method       = isset($val['method'])       ? $val['method']       : '';
 		$date         = isset($val['date'])         ? $val['date']         : '';
 		
-		echo '<input name="bbb_badbots['. $key .'][ip_address]"   type="hidden" value="'. esc_attr($ip_address) .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][request_uri]"  type="hidden" value="'. esc_attr($request_uri) .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][remote_host]"  type="hidden" value="'. esc_attr($remote_host) .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][query_string]" type="hidden" value="'. esc_attr($query_string) .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][user_agent]"   type="hidden" value="'. esc_attr($user_agent) .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][referrer]"     type="hidden" value="'. esc_attr($referrer) .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][protocol]"     type="hidden" value="'. esc_attr($protocol) .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][method]"       type="hidden" value="'. esc_attr($method) .'" /> ';
-		echo '<input name="bbb_badbots['. $key .'][date]"         type="hidden" value="'. esc_attr($date) .'" /> ';
+		echo '<input name="bbb_badbots['. esc_attr($key) .'][ip_address]"   type="hidden" value="'. esc_attr($ip_address) .'" /> ';
+		echo '<input name="bbb_badbots['. esc_attr($key) .'][request_uri]"  type="hidden" value="'. esc_attr($request_uri) .'" /> ';
+		echo '<input name="bbb_badbots['. esc_attr($key) .'][remote_host]"  type="hidden" value="'. esc_attr($remote_host) .'" /> ';
+		echo '<input name="bbb_badbots['. esc_attr($key) .'][query_string]" type="hidden" value="'. esc_attr($query_string) .'" /> ';
+		echo '<input name="bbb_badbots['. esc_attr($key) .'][user_agent]"   type="hidden" value="'. esc_attr($user_agent) .'" /> ';
+		echo '<input name="bbb_badbots['. esc_attr($key) .'][referrer]"     type="hidden" value="'. esc_attr($referrer) .'" /> ';
+		echo '<input name="bbb_badbots['. esc_attr($key) .'][protocol]"     type="hidden" value="'. esc_attr($protocol) .'" /> ';
+		echo '<input name="bbb_badbots['. esc_attr($key) .'][method]"       type="hidden" value="'. esc_attr($method) .'" /> ';
+		echo '<input name="bbb_badbots['. esc_attr($key) .'][date]"         type="hidden" value="'. esc_attr($date) .'" /> ';
 		
 		$data = '<strong>'. esc_html($date) .'</strong> - '. esc_html($ip_address) .' - '. esc_html($protocol) .' - <span class="bbb-user-agent">'. esc_html($user_agent) . '</span>';
 		
 		$data = apply_filters('blackhole_log_data', $data, $key, $val);
 		
-		$href = esc_url(add_query_arg(array('delete-bot-verify' => $nonce, 'bot-id' => $key, 'bot-ip' => $ip_address), admin_url('admin.php?page=blackhole_badbots')));
+		$href = add_query_arg(array('delete-bot-verify' => $nonce, 'bot-id' => $key, 'bot-ip' => $ip_address), admin_url('admin.php?page=blackhole_badbots'));
 		
-		$delete_link = '<a class="bbb-delete-bot" href="'. $href .'" title="'. esc_attr__('Delete this bot', 'blackhole-bad-bots') .'">[x]</a> ';
+		$delete_link = '<a class="bbb-delete-bot" href="'. esc_url($href) .'" title="'. esc_attr__('Delete this bot', 'blackhole-bad-bots') .'">[x]</a> ';
 		
 		$delete = ($ip_address === '173.203.204.123') ? '<span class="bbb-delete-bot-icon"></span>' : $delete_link;
 		

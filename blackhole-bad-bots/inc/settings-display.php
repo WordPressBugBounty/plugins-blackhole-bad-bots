@@ -20,7 +20,7 @@ function blackhole_menu_pages() {
 function blackhole_display_settings() { ?>
 	
 	<div class="wrap">
-		<h1 class="bbb-title"><?php echo BBB_NAME; ?> <span><?php echo BBB_VERSION; ?></span></h1>
+		<h1 class="bbb-title"><?php echo esc_html(BBB_NAME); ?> <span><?php echo esc_html(BBB_VERSION); ?></span></h1>
 		<?php settings_errors(); ?>
 		<form method="post" action="options.php">
 			
@@ -38,7 +38,7 @@ function blackhole_display_settings() { ?>
 function blackhole_display_badbots() { ?>
 	
 	<div class="wrap">
-		<h1 class="bbb-title"><?php echo BBB_NAME; ?> <span><?php echo BBB_VERSION; ?></span></h1>
+		<h1 class="bbb-title"><?php echo esc_html(BBB_NAME); ?> <span><?php echo esc_html(BBB_VERSION); ?></span></h1>
 		<form method="post" action="options.php">
 			
 			<?php 				
@@ -55,7 +55,7 @@ function blackhole_display_badbots() { ?>
 function blackhole_display_upgrade() { ?>
 	
 	<div class="wrap">
-		<h1 class="bbb-title"><?php echo BBB_NAME; ?> <span><?php echo BBB_VERSION; ?></span></h1>
+		<h1 class="bbb-title"><?php echo esc_html(BBB_NAME); ?> <span><?php echo esc_html(BBB_VERSION); ?></span></h1>
 		<form method="post" action="options.php">
 			
 			<h2><?php esc_html_e('Upgrade to Pro..', 'blackhole-bad-bots'); ?></h2>

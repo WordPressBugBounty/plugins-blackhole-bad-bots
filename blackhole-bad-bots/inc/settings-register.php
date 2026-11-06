@@ -163,8 +163,8 @@ function blackhole_callback_text($args) {
 	$label = isset($args['label']) ? $args['label'] : '';
 	$value = isset($bbb_options[$id]) ? sanitize_text_field($bbb_options[$id]) : '';
 	
-	echo '<input name="bbb_options['. $id .']" type="text" size="40" value="'. $value .'" />';
-	echo '<label class="bbb-label" for="bbb_options['. $id .']">'. $label .'</label>';
+	echo '<input name="bbb_options['. esc_attr($id) .']" type="text" size="40" value="'. esc_attr($value) .'" />';
+	echo '<label class="bbb-label" for="bbb_options['. esc_attr($id) .']">'. $label .'</label>';
 	
 }
 
@@ -194,8 +194,8 @@ function blackhole_callback_textarea($args) {
 		
 	}
 	
-	echo '<textarea '. $class .' name="bbb_options['. $id .']" rows="3" cols="50">'. $value .'</textarea>';
-	echo '<label class="bbb-label" for="bbb_options['. $id .']">'. $label .'</label>';
+	echo '<textarea '. $class .' name="bbb_options['. esc_attr($id) .']" rows="3" cols="50">'. esc_attr($value) .'</textarea>';
+	echo '<label class="bbb-label" for="bbb_options['. esc_attr($id) .']">'. $label .'</label>';
 	
 }
 
@@ -207,8 +207,8 @@ function blackhole_callback_checkbox($args) {
 	$label = isset($args['label']) ? $args['label'] : '';
 	$checked = isset($bbb_options[$id]) ? checked($bbb_options[$id], 1, false) : '';
 	
-	echo '<input name="bbb_options['. $id .']" type="checkbox" value="1" '. $checked .' /> ';
-	echo '<label class="bbb-label inline-block" for="bbb_options['. $id .']">'. $label .'</label>';
+	echo '<input name="bbb_options['. esc_attr($id) .']" type="checkbox" value="1" '. $checked .' /> ';
+	echo '<label class="bbb-label inline-block" for="bbb_options['. esc_attr($id) .']">'. $label .'</label>';
 	
 }
 
@@ -223,7 +223,7 @@ function blackhole_callback_radio($args) {
 	$label = isset($args['label']) ? $args['label'] : '';
 	$value = isset($bbb_options[$id]) ? sanitize_text_field($bbb_options[$id]) : '';
 	
-	echo '<label class="bbb-label inline-block" for="bbb_options['. $id .']">'. $label .'</label>';
+	echo '<label class="bbb-label inline-block" for="bbb_options['. esc_attr($id) .']">'. $label .'</label>';
 	echo '<ul>';
 	
 	foreach ($options_array as $option) {
@@ -231,7 +231,7 @@ function blackhole_callback_radio($args) {
 		$checked = '';
 		if ($value == $option['value']) $checked = ' checked="checked"';
 		
-		echo '<li><input type="radio" name="bbb_options['. $id .']" value="'. $option['value'] .'"'. $checked .' /> '. $option['label'] .'</li>';
+		echo '<li><input type="radio" name="bbb_options['. esc_attr($id) .']" value="'. esc_attr($option['value']) .'"'. $checked .' /> '. $option['label'] .'</li>';
 		
 	}
 	echo '</ul>';
@@ -249,22 +249,22 @@ function blackhole_callback_select($args) {
 	$label = isset($args['label']) ? $args['label'] : '';
 	$value = isset($bbb_options[$id]) ? sanitize_text_field($bbb_options[$id]) : '';
 	
-	echo '<select name="bbb_options['. $id .']">';
+	echo '<select name="bbb_options['. esc_attr($id) .']">';
 	
 	foreach ($options_array as $option) {
-		echo '<option '. selected($option['value'], $value, false) .' value="'. $option['value'] .'">'. $option['label'] .'</option>';
+		echo '<option '. selected($option['value'], $value, false) .' value="'. esc_attr($option['value']) .'">'. $option['label'] .'</option>';
 	}
-	echo '</select><label class="bbb-label inline-block" for="bbb_options['. $id .']">'. $label .'</label>';
+	echo '</select><label class="bbb-label inline-block" for="bbb_options['. esc_attr($id) .']">'. $label .'</label>';
 	
 }
 
 function blackhole_callback_reset($args) {
 	
 	$nonce = wp_create_nonce('blackhole_reset_options');
-	$href  = esc_url(add_query_arg(array('reset-options-verify' => $nonce), admin_url('options-general.php?page=blackhole_settings')));
-	$label = isset($args['label']) ? $args['label'] : esc_html__('Restore default plugin options', 'blackhole-bad-bots');
+	$href  = add_query_arg(array('reset-options-verify' => $nonce), admin_url('options-general.php?page=blackhole_settings'));
+	$label = isset($args['label']) ? $args['label'] : __('Restore default plugin options', 'blackhole-bad-bots');
 	
-	echo '<a class="bbb-reset-options" href="'. $href .'">'. $label .'</a>';
+	echo '<a class="bbb-reset-options" href="'. esc_url($href) .'">'. esc_html($label) .'</a>';
 	
 }
 
@@ -272,36 +272,36 @@ function blackhole_callback_reset($args) {
 
 function blackhole_callback_gopro_checkbox($id, $label, $title) {
 	
-	echo '<input title="'. $title .'" name="bbb_options['. $id .']" type="checkbox" disabled /> ';
-	echo '<label title="'. $title .'" class="bbb-label inline-block" for="bbb_options['. $id .']">'. $label .'</label> ';
+	echo '<input title="'. esc_attr($title) .'" name="bbb_options['. esc_attr($id) .']" type="checkbox" disabled /> ';
+	echo '<label title="'. esc_attr($title) .'" class="bbb-label inline-block" for="bbb_options['. esc_attr($id) .']">'. $label .'</label> ';
 	
 }
 
 function blackhole_callback_gopro_number($id, $label, $title, $number) {
 	
-	echo '<input title="'. $title .'" class="small-text" name="bbb_options['. $id .']" type="number" value="'. $number .'" disabled /> ';
-	echo '<label title="'. $title .'" class="bbb-label inline-block" for="bbb_options['. $id .']">'. $label .'</label> ';
+	echo '<input title="'. esc_attr($title) .'" class="small-text" name="bbb_options['. esc_attr($id) .']" type="number" value="'. esc_attr($number) .'" disabled /> ';
+	echo '<label title="'. esc_attr($title) .'" class="bbb-label inline-block" for="bbb_options['. esc_attr($id) .']">'. $label .'</label> ';
 	
 }
 
 function blackhole_callback_gopro_select($id, $label, $title, $option) {
 	
-	echo '<select title="'. $title .'" name="bbb_options['. $id .']" disabled>';
-	echo '<option selected>'. $option .'</option></select> ';
-	echo '<label title="'. $title .'" class="bbb-label inline-block" for="bbb_options['. $id .']">'. $label .'</label> ';
+	echo '<select title="'. esc_attr($title) .'" name="bbb_options['. esc_attr($id) .']" disabled>';
+	echo '<option selected>'. esc_html($option) .'</option></select> ';
+	echo '<label title="'. esc_attr($title) .'" class="bbb-label inline-block" for="bbb_options['. esc_attr($id) .']">'. $label .'</label> ';
 	
 }
 
 function blackhole_callback_gopro_text($id, $label, $title) {
 	
-	echo '<input title="'. $title .'" class="slim-width" name="bbb_options['. $id .']" type="text" size="10" disabled /> ';
-	echo '<label title="'. $title .'" class="bbb-label inline-block" for="bbb_options['. $id .']">'. $label .'</label> ';
+	echo '<input title="'. esc_attr($title) .'" class="slim-width" name="bbb_options['. esc_attr($id) .']" type="text" size="10" disabled /> ';
+	echo '<label title="'. esc_attr($title) .'" class="bbb-label inline-block" for="bbb_options['. esc_attr($id) .']">'. $label .'</label> ';
 	
 }
 
 function blackhole_callback_gopro_label($id, $label, $title) {
 	
-	echo '<label title="'. $title .'" class="bbb-label inline-block" for="bbb_options['. $id .']">'. $label .'</label> ';
+	echo '<label title="'. esc_attr($title) .'" class="bbb-label inline-block" for="bbb_options['. esc_attr($id) .']">'. $label .'</label> ';
 	
 }
 
@@ -413,41 +413,41 @@ function blackhole_callback_rate($args) {
 	
 	$label = isset($args['label']) ? $args['label'] : esc_html__('Show support with a 5-star rating &raquo;', 'blackhole-bad-bots');
 	$href  = 'https://wordpress.org/support/plugin/'. BBB_SLUG .'/reviews/?rate=5#new-post';
-	$title = esc_attr__('Help keep Blackhole going strong! A huge THANK YOU for your support!', 'blackhole-bad-bots');
+	$title = __('Help keep Blackhole going strong! A huge THANK YOU for your support!', 'blackhole-bad-bots');
 	
-	echo '<a target="_blank" rel="noopener noreferrer" class="bbb-rate-plugin" href="'. $href .'" title="'. $title .'">'. $label .'</a>';
+	echo '<a target="_blank" rel="noopener noreferrer" class="bbb-rate-plugin" href="'. esc_url($href) .'" title="'. esc_attr($title) .'">'. $label .'</a>';
 	
 }
 
 function blackhole_callback_support($args) {
 	
 	$href  = 'https://monzillamedia.com/donate.html';
-	$title = esc_attr__('Donate via PayPal, credit card, or cryptocurrency', 'blackhole-bad-bots');
-	$text  = isset($args['label']) ? $args['label'] : esc_html__('Show support with a small donation&nbsp;&raquo;', 'blackhole-bad-bots');
+	$title = __('Donate via PayPal, credit card, or cryptocurrency', 'blackhole-bad-bots');
+	$text  = isset($args['label']) ? $args['label'] : __('Show support with a small donation&nbsp;&raquo;', 'blackhole-bad-bots');
 	
-	echo '<a target="_blank" rel="noopener noreferrer" class="bbb-show-support" href="'. $href .'" title="'. $title .'">'. $text .'</a>';
+	echo '<a target="_blank" rel="noopener noreferrer" class="bbb-show-support" href="'. esc_url($href) .'" title="'. esc_attr($title) .'">'. esc_html($text) .'</a>';
 	
 }
 
 function blackhole_callback_pro($args) {
 	
-	$href = esc_url('https://plugin-planet.com/blackhole-pro/');
-	$text = esc_html__('👾 Unlock all features!', 'blackhole-bad-bots');
-	$link = esc_html__('Upgrade to Pro &raquo;', 'blackhole-bad-bots');
+	$href = 'https://plugin-planet.com/blackhole-pro/';
+	$text = __('👾 Unlock all features!', 'blackhole-bad-bots');
+	$link = __('Upgrade to Pro &raquo;', 'blackhole-bad-bots');
 	
 	blackhole_callback_pro_banner();
 	
-	echo '<p class="bbb-pro bbb-pro-2">'. $text .' <a target="_blank" rel="noopener noreferrer" href="'. $href .'">'. $link .'</a></p>';
+	echo '<p class="bbb-pro bbb-pro-2">'. esc_html($text) .' <a target="_blank" rel="noopener noreferrer" href="'. esc_url($href) .'">'. esc_html($link) .'</a></p>';
 	
 }
 
 function blackhole_callback_pro_banner() {
 	
-	$src  = esc_url(BBB_URL .'/img/blackhole-pro.jpg');
-	$href = esc_url('https://plugin-planet.com/blackhole-pro/');
-	$alt  = esc_attr__('Blackhole Pro', 'blackhole-bad-bots');
+	$src  = BBB_URL .'/img/blackhole-pro.jpg';
+	$href = 'https://plugin-planet.com/blackhole-pro/';
+	$alt  = __('Blackhole Pro', 'blackhole-bad-bots');
 	
-	echo '<p class="bbb-pro bbb-pro-1"><a target="_blank" rel="noopener noreferrer" href="'. $href .'"><img src="'. $src .'" width="400" height="104" alt="'. $alt .'"></a></p>';
+	echo '<p class="bbb-pro bbb-pro-1"><a target="_blank" rel="noopener noreferrer" href="'. esc_url($href) .'"><img src="'. esc_url($src) .'" width="400" height="104" alt=""></a></p>';
 	
 }
 
